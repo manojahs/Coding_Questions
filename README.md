@@ -32,3 +32,25 @@ class Program
         Console.WriteLine("Reversed: " + reversed);
     }
 }
+
+or 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string a = "Manoj";
+        string reversed = "";
+
+        for (int i = a.Length - 1; i >= 0; i--)
+        {
+            reversed += a[i];
+        }
+
+        Console.WriteLine("Original: " + a);
+        Console.WriteLine("Reversed: " + reversed);
+    }
+}
+
