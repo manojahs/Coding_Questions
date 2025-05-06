@@ -92,3 +92,44 @@ class Program
         }
     }
 }
+
+Check the 2nd string is it present in first string example string a ="vikram" string b = "ram"
+-----------------------------------------------------------------------
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string str1 = "vikram"; // Source string
+        string str2 = "ram";    // Characters to check
+
+        bool result = AreAllCharactersPresent(str1, str2);
+
+        Console.WriteLine(result
+            ? "All characters of str2 are present in str1."
+            : "Not all characters of str2 are present in str1.");
+    }
+
+    static bool AreAllCharactersPresent(string source, string target)
+    {
+        int[] charCount = new int[26]; // a-z only (assuming lowercase)
+
+        foreach (char c in source)
+        {
+            charCount[c - 'a']++;
+        }
+
+        foreach (char c in target)
+        {
+            if (charCount[c - 'a'] == 0)
+                return false;
+
+            charCount[c - 'a']--;
+        }
+
+        return true;
+    }
+}
+
