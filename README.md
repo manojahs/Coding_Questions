@@ -54,3 +54,41 @@ class Program
     }
 }
 
+
+2 in the given integer array place all the 0 element at last
+---------------------------------------------------------------
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] a = { 1, 4, 0, 4, 0 };
+        MoveZerosToEnd(a);
+
+        Console.WriteLine(string.Join(", ", a));  // Output: 1, 4, 4, 0, 0
+    }
+
+    static void MoveZerosToEnd(int[] arr)
+    {
+        int index = 0;
+
+        // First pass: move non-zero elements to the front
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] != 0)
+            {
+                arr[index] = arr[i];
+                index++;
+            }
+        }
+
+        // Fill remaining positions with 0
+        while (index < arr.Length)
+        {
+            arr[index] = 0;
+            index++;
+        }
+    }
+}
