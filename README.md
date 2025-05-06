@@ -5,7 +5,6 @@ Reverse a string
 ---------------------------
 
 using System;
-
 class Program
 {
     static void Main()
