@@ -132,6 +132,10 @@ class Program
         return true;
     }
 }
+
+
+Find the 2nd largest element in the given array
+---------------------------------------
 using System;
 
 class Program
@@ -160,6 +164,59 @@ class Program
             Console.WriteLine("No second largest number found.");
         else
             Console.WriteLine("Second largest number is: " + secondLargest);
+    }
+}
+
+Simple Quick Sort algo
+----------------------
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 25, 2, 7, 1, 9, 6 };
+        Console.WriteLine("Original Array: " + string.Join(", ", arr));
+
+        QuickSort(arr, 0, arr.Length - 1);
+
+        Console.WriteLine("Sorted Array:   " + string.Join(", ", arr));
+    }
+
+    static void QuickSort(int[] arr, int low, int high)
+    {
+        if (low < high)
+        {
+            int pivotIndex = Partition(arr, low, high);
+            QuickSort(arr, low, pivotIndex - 1);   // Left part
+            QuickSort(arr, pivotIndex + 1, high);  // Right part
+        }
+    }
+
+    static int Partition(int[] arr, int low, int high)
+    {
+        int pivot = arr[low]; // Pivot as first element
+        int i = low + 1;
+        int j = high;
+
+        while (i <= j)
+        {
+            while (i <= j && arr[i] <= pivot) i++;
+            while (i <= j && arr[j] > pivot) j--;
+
+            if (i < j)
+                Swap(arr, i, j);
+        }
+
+        Swap(arr, low, j); // Put pivot in the correct position
+        return j;
+    }
+
+    static void Swap(int[] arr, int i, int j)
+    {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
 
