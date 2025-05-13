@@ -132,4 +132,34 @@ class Program
         return true;
     }
 }
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 45, 12, 84, 75, 84, 30 };
+
+        int largest = numbers[0];
+        int secondLargest = numbers[0];
+
+        for (int i = 1; i < numbers.Length; i++)
+        {
+            if (numbers[i] > largest)
+            {
+                secondLargest = largest;
+                largest = numbers[i];
+            }
+            else if (numbers[i] < largest && (secondLargest == largest || numbers[i] > secondLargest))
+            {
+                secondLargest = numbers[i];
+            }
+        }
+
+        if (largest == secondLargest)
+            Console.WriteLine("No second largest number found.");
+        else
+            Console.WriteLine("Second largest number is: " + secondLargest);
+    }
+}
 
