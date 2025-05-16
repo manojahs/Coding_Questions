@@ -3,7 +3,7 @@
 
 Reverse a string
 ---------------------------
-
+```C#
 using System;
 class Program
 {
@@ -222,7 +222,7 @@ class Program
 
 Coding question Linq
 -----------------------
-```c#
+
 using System;
 using System.Linq;
 
