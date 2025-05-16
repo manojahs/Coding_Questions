@@ -220,3 +220,62 @@ class Program
     }
 }
 
+Coding question Linq
+-----------------------
+
+using System;
+using System.Linq;
+
+public class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Salary { get; set; }
+    public string Dept { get; set; }
+
+
+
+
+}
+
+'''c#
+public class Dept
+{
+    public static void Main(String[] args)
+    {
+        List<Employee> employees = new List<Employee>()
+        {
+         new Employee { Id = 1, Name = "John", Salary = 50000, Dept = "HR" },
+         new Employee { Id = 2, Name = "Jane", Salary = 60000, Dept = "IT" },
+         new Employee { Id = 3, Name = "Sam", Salary = 55000, Dept = "Finance" },
+         new Employee { Id = 4, Name = "Sara", Salary = 70000, Dept = "IT" },
+         new Employee { Id = 5, Name = "Tom", Salary = 45000, Dept = "HR" }
+         };
+
+        var secondHighestPerDept = employees
+       .GroupBy(e => e.Dept)
+       .Select(g => g.OrderByDescending(e => e.Salary).Skip(1).FirstOrDefault());
+
+        foreach (var emp in secondHighestPerDept)
+        {
+            if (emp != null)
+            {
+                Console.WriteLine($"Dept: {emp.Dept}, Name: {emp.Name}, Salary: {emp.Salary}");
+            }
+        }
+
+
+
+
+        var secondHighestSalary = employees.OrderByDescending(a=>a.Salary).Skip(1).FirstOrDefault();
+        if (secondHighestSalary != null)
+        {
+            Console.WriteLine($"Name is {secondHighestSalary.Name}, salary is: {secondHighestSalary.Salary}");
+        }
+
+
+
+
+    }
+}
+'''
