@@ -222,7 +222,7 @@ class Program
 
 Coding question Linq
 -----------------------
-
+```c#
 using System;
 using System.Linq;
 
@@ -238,7 +238,7 @@ public class Employee
 
 }
 
-'''c#
+
 public class Dept
 {
     public static void Main(String[] args)
@@ -264,18 +264,12 @@ public class Dept
             }
         }
 
-
-
-
         var secondHighestSalary = employees.OrderByDescending(a=>a.Salary).Skip(1).FirstOrDefault();
         if (secondHighestSalary != null)
         {
             Console.WriteLine($"Name is {secondHighestSalary.Name}, salary is: {secondHighestSalary.Salary}");
         }
 
-
-
-
     }
 }
-'''
+```
