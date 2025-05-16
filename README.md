@@ -220,7 +220,7 @@ class Program
     }
 }
 
-Coding question Linq
+Coding question Linq get the 2nd highest salary based on the dept
 -----------------------
 
 using System;
@@ -232,9 +232,6 @@ public class Employee
     public string Name { get; set; }
     public decimal Salary { get; set; }
     public string Dept { get; set; }
-
-
-
 
 }
 
@@ -272,4 +269,35 @@ public class Dept
 
     }
 }
+
+
+my name is manoj i my work is developing things how to get number of all the words counts in c sharp
+-----------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "my name is manoj i my work is developing things";
+
+        string[] words = input.Split( ' ' );
+
+        Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+        foreach (string word in words)
+        {
+            // Get current count or default to 0, then increment
+            wordCount[word] = wordCount.GetValueOrDefault(word, 0) + 1;
+        }
+
+        foreach (var pair in wordCount)
+        {
+            Console.WriteLine($"Word: {pair.Key}, Count: {pair.Value}");
+        }
+    }
+}
+
 ```
