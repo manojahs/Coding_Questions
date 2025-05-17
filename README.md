@@ -284,6 +284,7 @@ class Program
         string input = "my name is manoj i my work is developing things";
 
         string[] words = input.Split( ' ' );
+                         //input.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
         Dictionary<string, int> wordCount = new Dictionary<string, int>();
 
