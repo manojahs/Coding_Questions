@@ -335,5 +335,5 @@ public class KMostFrequentElements
     }
 }
 
-
+int[] a = {2,4,5,3} target 7 result is index of array [1,3]
 ```
