@@ -342,7 +342,7 @@ int[] a = {2,4,5,3} target 7 result is index of array [1,3]
 
 class FindTwoSum
 {
-    public void FindTwoSumValue(int[] a, int target)
+    public static void FindTwoSumValue(int[] a, int target)
     {
         var map = new Dictionary<int, int>();
         for (int i = 0; i < a.Length; i++)
@@ -364,8 +364,7 @@ class FindTwoSum
         int[] a = { 1, 3, 2, 4, 5 };
         int target = 7;
 
-        FindTwoSum findTwoSum = new FindTwoSum();
-        findTwoSum.FindTwoSumValue(a, target);
+        FindTwoSumValue(a, target);
     }
 }
 
