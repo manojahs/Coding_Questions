@@ -368,4 +368,28 @@ class FindTwoSum
     }
 }
 
+class ReverseArray
+{
+
+    public static void Reverse(int[] arr)
+    {
+        int[] b = new int[arr.Length];
+        for(int i =0;i<arr.Length;i++)
+        {
+            b[i] = arr[arr.Length-i - 1];
+        }
+        for(int i=0;i<arr.Length;i++)
+        {
+            arr[i] = b[i];
+        }
+    }
+    public static void Main(string[] args)
+    {
+        int[] arr = [2, 4, 1, 3, 5];  
+        Reverse(arr);
+        for (int i = 0; i < arr.Length; i++)
+            Console.Write(arr[i] + " ");
+    }
+}
+
 ```
